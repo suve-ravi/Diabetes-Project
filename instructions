@@ -1,0 +1,4 @@
+"""*These are the questions from the CDC dataset, on ViteScreen 2. Frome questions 1, to 16, you answer by choosing a level. The levels are high, medium,
+and low. For example, for question 9, if I consume fruits everyday, then I'd input "HIGH" as my level in the pop-up screen. Conversely, if I've never con-
+sumed alcohol, or only ever consumed alchohol a couple of times in my life, then I would input "LOW" as my level for the pop-up screen for question 11. For
+questions 17, to 19, answer by plainly inputting the information -- Your sex, age, and level of education (i.e Post-secondary, secondary, primary, etc)."""

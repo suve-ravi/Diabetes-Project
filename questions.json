@@ -1,0 +1,25 @@
+{
+    "Questions": {
+        "Q1": "Blood Pressure Level",
+        "Q2": "Cholesterol Level",
+        "Q3": "Cholesterol Check",
+        "Q4": "Body Mass Index (BMI)",
+        "Q5": "Smoking Regularity",
+        "Q6": "Stroke History",
+        "Q7": "Heart Disease/Attack Likelihood",
+        "Q8": "Physical Activity Regularity",
+        "Q9": "Level of Fruits Consumed",
+        "Q10": "Level of Vegetables Consumed",
+        "Q11": "Level of Alcohol Consumption",
+        "Q12": "Quality of Healthcare Provided",
+        "Q13": "Healthcare Affordability",
+        "Q14": "General Health",
+        "Q15": "Mental Health",
+        "Q16": "Physical Health",
+        "Q17": "Difficulty Walking",
+        "Q18": "Sex",
+        "Q19": "Age",
+        "Q20": "Level of Education",
+        "Q21": "Level of Income"
+    }
+}

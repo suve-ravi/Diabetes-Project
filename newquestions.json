@@ -1,0 +1,318 @@
+
+1 of 7
+RE: CDC Diabetic dataset feature description
+External
+Inbox
+
+Ravi Ravichandran
+Aug 26, 2025, 8:09 PM
+Thanks, Marzia. I will do. I have also cc’d Suvethan’s email here so that for future emails you can also cc to him. Thanks, Ravi From: Marzia Zaman <Marzia@cist
+
+Ravi Ravichandran
+AttachmentsAug 26, 2025, 8:11 PM
+Hi Suvethan, Please carefully go through this email. Regards,
+
+Marzia Zaman <Marzia@cistel.com>
+Attachments
+Aug 26, 2025, 8:48 PM
+to Darshana, me, Ravi
+
+Hi Suvethan,
+
+ 
+
+Since you have already understood the json file structure and the concept, for expediting our work, I am sharing the VitaScreenDiabetesQuestions.json file as attached. Please have the individual question dialogue with all information from this json file (no need for an extra help button, okay?). The option/combo box can be dynamically populated with the possible answers (key:value) pairs as each entry.
+
+ One attachment
+  •  Scanned by Gmail
+
+Suvethan Ravichandran
+Aug 27, 2025, 12:52 PM
+Thank you Dr. Zarman. I'm looking into it. Regards,
+
+Suvethan Ravichandran <ravis0501@wrdsb.ca>
+Sep 1, 2025, 10:04 PM
+to ravi, Marzia
+
+Dear Dr. Zaman,
+
+Since we're not using the levels "HIGH", "MEDIUM" and "LOW" anymore, the colours need to now be correlated in a new fashion. How would you want me to match the user response with colours displayed on the screen. Would you like me to use new colours?
+
+Thanks,
+Suvethan
+
+Marzia Zaman
+Sep 2, 2025, 9:57 AM
+to me, Ravi
+
+Good question. We can have 1 – red, 2 – yellow and 3 – green. If it is binary have only Yes - red and No – green or vice versa depending on the question. In that case, this information should be also stored in JSON with maybe color attributor “R”, “G”, “Y” with each question answer i.e.
+
+ 
+
+Let me fix the JSON file accordingly and I’ll share it with you soon.
+
+ 
+
+Regards,
+
+Marzia
+
+ 
+
+Marzia Zaman
+Research Scientist
+
+Cistel Technology Inc.
+
+“Total IT Partners”
+
+
+200-30 Concourse Gate, Ottawa, ON   K2E 7V7
+
+T:  (613) 723-8344 ext. 2216 (W), 613-325-9709 (M)
+
+marzia@cistel.com  |  www.cistel.com
+
+ 
+
+ 
+
+From: Suvethan Ravichandran <ravis0501@wrdsb.ca>
+Sent: September 1, 2025 10:05 PM
+To: Marzia Zaman <Marzia@cistel.com>; Ravi Ravichandran <ravi@tecsis.ca>
+Subject: Re: CDC Diabetic dataset feature description
+
+ 
+
+You don't often get email from ravis0501@wrdsb.ca. Learn why this is important
+
+
+Marzia Zaman
+Attachments
+Sep 2, 2025, 2:38 PM
+to Shenghao, me, Ravi
+
+Hi Suvethan,
+
+ 
+
+Here is a revised json file for you to use for  VitaScreen.
+
+ 
+
+Thank you.
+
+ 
+
+Please let me know if you have any further questions/concerns.
+
+ 
+
+Shenghao: I’ll update you on our progress on the other paper/work in the next meeting.
+
+ 
+
+Regards,
+
+Marzia
+
+ 
+
+Marzia Zaman
+Research Scientist
+
+Cistel Technology Inc.
+
+“Total IT Partners”
+
+
+200-30 Concourse Gate, Ottawa, ON   K2E 7V7
+
+T:  (613) 723-8344 ext. 2216 (W), 613-325-9709 (M)
+
+marzia@cistel.com  |  www.cistel.com
+
+ 
+
+ 
+
+From: Suvethan Ravichandran <ravis0501@wrdsb.ca>
+Sent: September 1, 2025 10:05 PM
+To: Marzia Zaman <Marzia@cistel.com>; Ravi Ravichandran <ravi@tecsis.ca>
+Subject: Re: CDC Diabetic dataset feature description
+
+ 
+
+You don't often get email from ravis0501@wrdsb.ca. Learn why this is important
+
+Dear Dr. Zaman,
+
+ One attachment
+  •  Scanned by Gmail
+Thank you very much.Thanks, I'll take a look.Noted with thanks.
+marzia@cistel.com. Press tab to insert.
+{
+  "questions": [
+    {
+      "question": "Diabetes?",
+      "possible_answers": {
+        "0": {"answer": "no diabetes", "color": "G"},
+        "1": {"answer": "prediabetes or diabetes", "color": "R"}
+      }
+    },
+    {
+      "question": "High blood pressure?",
+      "possible_answers": {
+        "0": {"answer": "no high BP", "color": "G"},
+        "1": {"answer": "high BP", "color": "R"}
+      }
+    },
+    {
+      "question": "High cholesterol?",
+      "possible_answers": {
+        "0": {"answer": "no high cholesterol", "color": "G"},
+        "1": {"answer": "high cholesterol", "color": "R"}
+      }
+    },
+    {
+      "question": "Cholesterol check in last 5 years?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "R"},
+        "1": {"answer": "Yes", "color": "G"}
+      }
+    },
+    {
+      "question": "Body Mass Index?",
+      "possible_answers": {
+        "1": {"answer": "Normal (18.5–24.9)", "color": "G"},
+        "2": {"answer": "Underweight or Overweight (<18.5 or 25–29.9)", "color": "Y"},
+        "3": {"answer": "Obese (≥30)", "color": "R"}
+      }
+    },
+    {
+      "question": "Have you smoked at least 100 cigarettes in your entire life?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "G"},
+        "1": {"answer": "Yes", "color": "R"}
+      }
+    },
+    {
+      "question": "Has doctor ever told you had stroke?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "G"},
+        "1": {"answer": "Yes", "color": "R"}
+      }
+    },
+    {
+      "question": "Coronary heart disease (CHD) or myocardial infarction (MI)?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "G"},
+        "1": {"answer": "Yes", "color": "R"}
+      }
+    },
+    {
+      "question": "Physical activities in past 30 days (Not including job)",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "R"},
+        "1": {"answer": "Yes", "color": "G"}
+      }
+    },
+    {
+      "question": "Consume fruit 1 or more times per day?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "R"},
+        "1": {"answer": "Yes", "color": "G"}
+      }
+    },
+    {
+      "question": "Consume vegetables 1 or more times per day?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "R"},
+        "1": {"answer": "Yes", "color": "G"}
+      }
+    },
+    {
+      "question": "Heavy drinkers (men >14/week, women >7/week)?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "G"},
+        "1": {"answer": "Yes", "color": "R"}
+      }
+    },
+    {
+      "question": "Have any kind of health care coverage?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "R"},
+        "1": {"answer": "Yes", "color": "G"}
+      }
+    },
+    {
+      "question": "Needed to see a doctor but could not because of cost?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "G"},
+        "1": {"answer": "Yes", "color": "R"}
+      }
+    },
+    {
+      "question": "General health (scale 1-3)",
+      "possible_answers": {
+        "1": {"answer": "Excellent", "color": "G"},
+        "2": {"answer": "Good", "color": "Y"},
+        "3": {"answer": "Poor", "color": "R"}
+      }
+    },
+    {
+      "question": "Mental health not good (past 30 days, scale 1-3)",
+      "possible_answers": {
+        "1": {"answer": "Less than 10 days", "color": "G"},
+        "2": {"answer": "Less than 21 days", "color": "Y"},
+        "3": {"answer": "More than 20 days", "color": "R"}
+      }
+    },
+    {
+      "question": "Physical health not good (past 30 days, scale 1-3)",
+      "possible_answers": {
+        "1": {"answer": "Less than 10 days", "color": "G"},
+        "2": {"answer": "Less than 21 days", "color": "Y"},
+        "3": {"answer": "More than 20 days", "color": "R"}
+      }
+    },
+    {
+      "question": "Serious difficulty walking or climbing stairs?",
+      "possible_answers": {
+        "0": {"answer": "No", "color": "G"},
+        "1": {"answer": "Yes", "color": "R"}
+      }
+    },
+    {
+      "question": "Gender?",
+      "possible_answers": {
+        "0": {"answer": "Female", "color": "P"},
+        "1": {"answer": "Male", "color": "B"}
+      }
+    },
+    {
+      "question": "Age Category?",
+      "possible_answers": {
+        "1": {"answer": "1-30", "color": "G"},
+        "2": {"answer": "31-60", "color": "Y"},
+        "3": {"answer": "60+", "color": "R"}
+      }
+    },
+    {
+      "question": "Education level?",
+      "possible_answers": {
+        "1": {"answer": "No education or Grade 1-5", "color": "R"},
+        "2": {"answer": "Grade 5-10", "color": "Y"},
+        "3": {"answer": "College or more", "color": "G"}
+      }
+    },
+    {
+      "question": "Income Level?",
+      "possible_answers": {
+        "1": {"answer": "Less than 10,000", "color": "R"},
+        "2": {"answer": "Less than 35,000", "color": "Y"},
+        "3": {"answer": "Greater than 35,000", "color": "G"}
+      }
+    }
+  ]
+}

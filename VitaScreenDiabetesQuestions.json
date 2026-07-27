@@ -1,13 +1,6 @@
 {
   "questions": [
     {
-      "question": "Diabetes?",
-      "possible_answers": {
-        "0": {"answer": "no diabetes", "color": "G"},
-        "1": {"answer": "prediabetes or diabetes", "color": "R"}
-      }
-    },
-    {
       "question": "High blood pressure?",
       "possible_answers": {
         "0": {"answer": "no high BP", "color": "G"},
@@ -24,8 +17,8 @@
     {
       "question": "Cholesterol check in last 5 years?",
       "possible_answers": {
-        "0": {"answer": "No", "color": "R"},
-        "1": {"answer": "Yes", "color": "G"}
+        "0": {"answer": "Yes", "color": "G"},
+        "1": {"answer": "No", "color": "R"}
       }
     },
     {
@@ -60,22 +53,22 @@
     {
       "question": "Physical activities in past 30 days (Not including job)",
       "possible_answers": {
-        "0": {"answer": "No", "color": "R"},
-        "1": {"answer": "Yes", "color": "G"}
+        "0": {"answer": "Yes", "color": "G"},
+        "1": {"answer": "No", "color": "R"}
       }
     },
     {
       "question": "Consume fruit 1 or more times per day?",
       "possible_answers": {
-        "0": {"answer": "No", "color": "R"},
-        "1": {"answer": "Yes", "color": "G"}
+        "0": {"answer": "Yes", "color": "G"},
+        "1": {"answer": "No", "color": "R"}
       }
     },
     {
       "question": "Consume vegetables 1 or more times per day?",
       "possible_answers": {
-        "0": {"answer": "No", "color": "R"},
-        "1": {"answer": "Yes", "color": "G"}
+        "1": {"answer": "Yes", "color": "G"},
+        "0": {"answer": "No", "color": "R"}
       }
     },
     {
@@ -88,8 +81,8 @@
     {
       "question": "Have any kind of health care coverage?",
       "possible_answers": {
-        "0": {"answer": "No", "color": "R"},
-        "1": {"answer": "Yes", "color": "G"}
+        "0": {"answer": "Yes", "color": "G"},
+        "1": {"answer": "No", "color": "R"}
       }
     },
     {
@@ -103,24 +96,24 @@
       "question": "General health (scale 1-3)",
       "possible_answers": {
         "1": {"answer": "Excellent", "color": "G"},
-        "2": {"answer": "Good", "color": "Y"},
+        "2": {"answer": "Reasonable", "color": "Y"},
         "3": {"answer": "Poor", "color": "R"}
       }
     },
     {
-      "question": "Mental health not good (past 30 days, scale 1-3)",
+      "question": "Quality of mental health",
       "possible_answers": {
-        "1": {"answer": "Less than 10 days", "color": "G"},
-        "2": {"answer": "Less than 21 days", "color": "Y"},
-        "3": {"answer": "More than 20 days", "color": "R"}
+        "1": {"answer": "Excellent", "color": "G"},
+        "2": {"answer": "Reasonable", "color": "Y"},
+        "3": {"answer": "Poor", "color": "R"}
       }
     },
     {
-      "question": "Physical health not good (past 30 days, scale 1-3)",
+      "question": "Quality of physical health",
       "possible_answers": {
-        "1": {"answer": "Less than 10 days", "color": "G"},
-        "2": {"answer": "Less than 21 days", "color": "Y"},
-        "3": {"answer": "More than 20 days", "color": "R"}
+        "1": {"answer": "Excellent", "color": "G"},
+        "2": {"answer": "reasonable", "color": "Y"},
+        "3": {"answer": "Poor", "color": "R"}
       }
     },
     {

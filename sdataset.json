@@ -1,0 +1,25 @@
+{
+    "Questions": {
+        "Q1": "HighBP",
+        "Q2": "HighCHol",
+        "Q3": "CholCheck",
+        "Q4": "BMI",
+        "Q5": "Smoker",
+        "Q6": "Stroke",
+        "Q7": "HeartDiseaseorAttack",
+        "Q8": "PhysActivity",
+        "Q9": "Fruits",
+        "Q10": "Veggies",
+        "Q11": "HvyAlcoholConsump",
+        "Q12": "AnyHealthCare",
+        "Q13": "NoDocbcCost",
+        "Q14": "GenHlth",
+        "Q15": "MentHlth",
+        "Q16": "PhysHlth",
+        "Q17": "DiffWalk",
+        "Q18": "Sex",
+        "Q19": "Age",
+        "Q20": "Education",
+        "Q21": "Income"
+    }
+}

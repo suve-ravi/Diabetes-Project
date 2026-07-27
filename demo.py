@@ -3,8 +3,8 @@ from docx.shared import Inches
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from PyQt5.QtWidgets import (
-    QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QLabel,
-    QInputDialog, QDialog, QComboBox, QGridLayout, QLineEdit, QMessageBox, QFileDialog
+    QApplication, QTableWidget, QTableWidgetItem, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QLabel,
+    QInputDialog, QDialog, QComboBox, QGridLayout, QLineEdit, QMessageBox, QFileDialog, QTextEdit
 )
 from PyQt5.QtGui import QFont
 import sys
@@ -19,7 +19,7 @@ class BarChartCanvas(FigureCanvas):
         self.setParent(parent)
         self.num_questions = num_questions
         self.answers = answers or ["Low"] * self.num_questions
-        self.answers.append("Low")
+        #self.answers.append("Low")
         self.draw_chart()
 
     def draw_chart(self):
@@ -95,6 +95,16 @@ class SurveyApp(QWidget):
         with open(json_path, 'r', encoding='utf-8') as f:
             self.questions = json.load(f)["questions"]
 
+        script_dir2 = os.path.dirname(os.path.abspath(__file__))
+        json_path2 = os.path.join(script_dir2, 'sdataset.json')
+        with open(json_path2, 'r', encoding='utf-8') as f:
+            self.questions2 = json.load(f)["Questions"]
+
+        script_dir3 = os.path.dirname(os.path.abspath(__file__))
+        json_path3 = os.path.join(script_dir3, 'example.json')
+        with open(json_path3, 'r', encoding='utf-8') as f:
+            self.questions3 = json.load(f)["Questions"]
+
         self.answers = [""] * (len(self.questions) + 1)
 
         self.name_input = QLineEdit()
@@ -109,6 +119,8 @@ class SurveyApp(QWidget):
         self.create_question_buttons()
         self.layout.addWidget(self.chart)
         self.create_action_buttons()
+
+
 
     def create_top_inputs(self):
         form_layout = QGridLayout()
@@ -134,15 +146,22 @@ class SurveyApp(QWidget):
         cancel_btn.clicked.connect(self.reset_answers)
         
         save_btn = QPushButton("Save")
-        save_btn.clicked.connect(self.save_report)
+        save_btn.clicked.connect(self.save_data)
 
         quit_btn = QPushButton("Quit")
         quit_btn.clicked.connect(self.quit_application)
-        
+
+        load_btn = QPushButton("Load")
+        load_btn.clicked.connect(self.load_data)
+
+        help_btn = QPushButton("Help")
+        help_btn.clicked.connect(self.show_help)
+
         button_layout.addWidget(cancel_btn)
         button_layout.addWidget(save_btn)
         button_layout.addWidget(quit_btn)
-
+        button_layout.addWidget(load_btn)
+        button_layout.addWidget(help_btn)
         self.layout.addLayout(button_layout)
 
     def ask_question(self, idx):
@@ -218,6 +237,40 @@ class SurveyApp(QWidget):
         os.remove(chart_img)
         QMessageBox.information(self, "Saved", f"Report saved to {save_path}")
 
+    def save_data(self):
+        save_path = QFileDialog.getSaveFileName(self, "Save Data", "", "JSON Files (*.json)")[0]
+
+        if not save_path:
+            return
+
+        if not save_path.endswith(".json"):
+            save_path += ".json"
+
+        data = {
+            "name": self.name_input.text().strip(),
+            "health_card_id": self.health_id_input.text().strip(),
+            "answers": self.answers
+        }
+
+        with open(save_path, "w") as f:
+            json.dump(data, f, indent=4)
+
+        QMessageBox.information(self, "Saved", f"Report saved to {save_path}")
+
+    def load_data(self):
+        load_path = QFileDialog.getOpenFileName(self, "Load Data", "", "JSON Files (*.json)")[0]
+
+        if not load_path:
+            return
+
+        with open(load_path, "r") as f:
+            data = json.load(f)
+
+        self.name_input.setText(data.get("name", ""))
+        self.health_id_input.setText(data.get("health_card_id", ""))
+        self.answers = data.get("answers", [""] * (len(self.questions)+1))
+        self.chart.update_answers(self.answers)
+
     def quit_application(self):
         reply = QMessageBox.question(self, "Quit", "Do you want to save before quitting?", QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel)
         if reply == QMessageBox.Yes:
@@ -227,6 +280,65 @@ class SurveyApp(QWidget):
             QApplication.quit()
         # Cancel does nothing
 
+    def load_report(self):
+        load_path = QFileDialog.getOpenFileName(self, "Load Word Report", "", "Word Document (*.docx)")[0] #loads the report from a Word document
+        if not load_path:
+            return
+
+        try:
+            doc = Document(load_path)
+            # Extract name and health card ID from the document
+            name = "" # name and hcid are extracted from the Word document and set in the input fields -- currently blank if not found
+            hcid = ""
+            for para in doc.paragraphs:
+                if para.text.startswith("Name:"):
+                    name = para.text.replace("Name:", "").strip() # extracting the name from the Word document and setting it in the input field
+                elif para.text.startswith("Health Card ID:"):
+                    hcid = para.text.replace("Health Card ID:", "").strip() # extracting the health card ID from the Word document and setting it in the input field
+
+            self.name_input.setText(name)
+            self.health_id_input.setText(hcid)
+
+            # Load chart image and update the chart
+            chart_img = "temp_chart.png"
+            for shape in doc.inline_shapes:
+                if shape.type == 3:  # InlineShapeType.PICTURE
+                    shape._inline.graphic.graphicData.pic.blipFill.blip.save(chart_img)
+                    break
+
+            if os.path.exists(chart_img):
+                self.chart.figure.clear()
+                img = plt.imread(chart_img)
+                self.chart.ax.imshow(img)
+                self.chart.ax.axis('off')
+                self.chart.draw()
+                os.remove(chart_img)
+
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to load report: {e}")
+
+    def show_help(self):
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Survey Questions")
+        dialog.resize(900, 900)
+
+        layout = QVBoxLayout(dialog)
+
+        self.tableWidget = QTableWidget()
+        self.tableWidget.setRowCount(21)
+        self.tableWidget.setColumnCount(4)
+        self.tableWidget.setHorizontalHeaderLabels(["Question ID", "Question", "Feature Name", "Possible Values & Explanation"])
+
+        for i,q in enumerate(self.questions):
+            question_id = f"Q{i+1}"
+            self.tableWidget.setItem(i, 0, QTableWidgetItem(question_id))
+            self.tableWidget.setItem(i, 1, QTableWidgetItem(q.get('question', '')))
+            self.tableWidget.setItem(i, 2, QTableWidgetItem(self.questions2.get(question_id, "")))
+            self.tableWidget.setItem(i, 3, QTableWidgetItem(self.questions3.get(question_id, '')))
+
+        layout.addWidget(self.tableWidget)
+        
+        dialog.exec_()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

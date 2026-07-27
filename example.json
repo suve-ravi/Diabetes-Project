@@ -1,0 +1,25 @@
+{
+    "Questions": {
+        "Q1": "A High Blood Pressure Level indicates a higher risk of developing diabetes. A High Blood Pressure Level is around 130/80 mmHg, a moderate blood preasure level is 120/80 mmHg, and a low blood pressure level is 90/60 mmHg.",
+        "Q2": "Your Cholesterol Levels aren't directly related to diabetes, however they can be an indicator that you have diabetes. People with diabetes tend to have higher levels of LDL (bad) cholesterol and lower levels of HDL (good) cholesterol. A high cholesterol level is 240 mg/dL or higher, and a low cholesterol level is less than 200 mg/dL.", 
+        "Q3": "The more recently you had a Cholesterol Check, the more accurate your results will be, and you'll be certain of what your cholesterol levels are. If you haven't checked in a while, your levels' could have changed.",
+        "Q4": "A high Body Mass Index (BMI) indicates a higher risk of developing type 2diabetes. A BMI of 30 or higher is considered obese, while a BMI between 25 and 29.9 is considered overweight. A BMI between 18.5 and 24.9 is considered normal, and a BMI below 18.5 is considered underweight.",
+        "Q5": "Smoking Regularly is dangerous for your health, and can increase your risk of developing diabetes. Smoking can also make it harder to manage diabetes if you already have it, as it builds insulin resistance, and increases blood glucose levels. If you smoke, it's important to quit as soon as possible.",
+        "Q6": "Diabetes is a likely cause for a stroke, and having diabetes increases your risk of having a stroke. If you've had a stroke, it's important to manage your diabetes and other risk factors to prevent another stroke. Many strokes may indicate that you have diabetes.",
+        "Q7": "Heart Disease are also likely caused by diabetes, and having diabetes increases your risk of developing heart disease. This is because high blood sugar levels can damage blood vessels and nerves that control the heart.",
+        "Q8": "Physical Activity helps reduces your weight, and also lowers your blood sugar levels, which can help prevent or manage diabetes. Regular physical activity can also improve your overall health and reduce your risk of developing other chronic diseases.",
+        "Q9": "Eating lots of fruits help combat diabetes by controlling your blood sugar levels, and also provides essential vitamins and minerals that can help prevent or manage diabetes. Fruits are also a good source of fiber, which can help regulate blood sugar levels.",
+        "Q10": "For similar reasons above, consuming a lot of vegetables can help prevent or manage diabetes. Vegetables are low in calories and high in fiber, which can help regulate blood sugar levels. They also provide essential vitamins and minerals that can help prevent or manage diabetes. Vegetables can also slow down sugar absorption, improving insulin sensitivity, and reducing inflammation.",
+        "Q11": "Heavy Alcohol Consumption can affect blood sugar levels by blocking the liver from releasing glucose into the bloodstream. This can lead to low blood sugar levels, which can be dangerous for people with diabetes. Heavy alcohol consumption can also increase the risk of developing type 2 diabetes.",
+        "Q12": "Adequate healthcare helps people better detect, prevent, and potentially manage diabetes.",
+        "Q13": "If local healthcare isn't affordable, you may have a harder chance of doing any of the above.",
+        "Q14": "If your general health is poor, it may indicate that you have diabetes, or are at a higher risk of developing diabetes. Poor general health can also make it harder to manage diabetes if you already have it.",
+        "Q15": "Poor mental health could potentially worsen the severity of type 2 diabetes. Constantly high cortisol levels can lead to insulin resistance, which can increase your risk of developing type 2 diabetes, so don't be stresssed.",
+        "Q16": "Similarly to the reason above, poor physical health leads to insulin resistance, thus leading to the possibility of developing type 2 diabetes. When Physical Health is poor, cells stop responding to insulin. Unecessary fat can also lead to inflammation and cells ignoring insulin.",
+        "Q17": "If you have difficulty walking, then it may indicate that you might have diabetes, as diabetes can cause nerve damage and poor circulation, which can lead to diffuculty walking. The nerve damage may also lead to muscle stiffness.",
+        "Q18": "What is your BIOLOGICAL Gender?",
+        "Q19": "Age is certainly a factor in developing type 2 diabetes, as people older than 45 are at a higher risk of developing diabetes. People around 65 years old are at the highest risk of developing diabetes, and people younger than 45 are at a lower risk of developing diabetes.",
+        "Q20": "Level of Education - Look at answers provided as ranges are given",
+        "Q21": "Level of Income -- Look at answers provided as ranges are given"
+    }
+}
